@@ -15,10 +15,8 @@ class Pizza:
     # Проверяем, что размер L или XL
     @size.setter
     def size(self, value: str):
-        if (value == 'L') or (value == 'XL'):
-            self._size = value
-        else:
-            assert ValueError('Wrong size. Input L or XL')
+        assert value in ('L', 'XL'), 'Wrong size. Input L or XL'
+        self._size = value
 
 
 class Margarita(Pizza):
